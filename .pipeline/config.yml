@@ -1,0 +1,14 @@
+# Project Setup
+general:
+  pipeline: "sap-ui5-neo"
+
+# Stage enablement
+stages:
+  testStage:
+    enable: false
+  malwareScanStage:
+    enable: true
+  deployStage:
+    enable: false
+  tmsStage:
+    enable: false
