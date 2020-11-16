@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core">
+	<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+		adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1"
+		singleContainerFullSize="false">
+		<f:content>
+			<core:Title text=""/>
+			<Label text="{i18n>orderTypeLabel}" wrapping="true"></Label>
+			<Select selectedKey="{salesOrderModel>/OrderType}">
+				<items>
+					<core:Item text="This should be filled" key=""/>
+				</items>
+			</Select>
+			<Label text="{i18n>salesAreaLabel}" wrapping="true"></Label>
+			<Select selectedKey="{salesOrderModel>/SalesArea1}">
+				<items>
+					<core:Item text="This should be filled" key=""/>
+				</items>
+				<layoutData>
+					<layout:GridData span="XL3 L3 M3 S4"/>
+				</layoutData>
+			</Select >
+			<Select selectedKey="{salesOrderModel>/SalesArea2}">
+				<items>
+					<core:Item text="This should be filled" key=""/>
+				</items>
+				<layoutData>
+					<layout:GridData span="XL3 L3 M3 S4"/>
+				</layoutData>
+			</Select >
+			<Input value="{salesOrderModel>/SalesArea3}">
+				<layoutData>
+					<layout:GridData span="XL2 L2 M2 S4"/>
+				</layoutData>
+			</Input >
+			<Label text="{i18n>soldToLabel}" wrapping="true"></Label>
+			<Input value="{salesOrderModel>/SoldTo}" type="Text"></Input>
+			<Button icon="sap-icon://company-view">
+				<layoutData>
+					<layout:GridData span="XL2 L2 M2 S1"/>
+				</layoutData>
+			</Button>
+			<Label text="{i18n>poNumberLabel}" wrapping="true"></Label>
+			<Input value="{salesOrderModel>/PONumber}" type="Text"></Input>
+			<Label text="{i18n>orderReasonLabel}" wrapping="true"></Label>
+			<Select selectedKey="{salesOrderModel>/OrderType}">
+				<items>
+					<core:Item text="This should be filled" key=""/>
+				</items>
+			</Select>
+			<core:Title text="{i18n>customerContactTitle}"/>
+			<Label text="{i18n>shipToLabel}" wrapping="true"></Label>
+			<Input value="{salesOrderModel>/ShipTo}" type="Text">
+				<layoutData>
+					<layout:GridData span="XL2 L2 M2 S4"/>
+				</layoutData>
+			</Input>
+			<Input value="{salesOrderModel>/ShipTo}" type="Text"></Input>
+			<Label text="{i18n>addressLabel}" wrapping="true"></Label>
+			<Input value="{salesOrderModel>/Address}"></Input >
+			<Label text="{i18n>telLabel}" wrapping="true"></Label>
+			<Input value="{salesOrderModel>/Tel}" type="Text"></Input>
+			<Label text="{i18n>salesRepresentativeLabel}" wrapping="true"></Label>
+			<Input value="{salesOrderModel>/SalesRepresentative}" type="Text"></Input>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>

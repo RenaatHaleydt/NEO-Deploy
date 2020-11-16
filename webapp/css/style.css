@@ -1,0 +1,33 @@
+/*Make the application take the complete screen width*/
+
+.sapMShellCentralBox {
+    width: 100% !Important;
+    left: 0% !Important;
+    margin-left: 0px !Important;
+}
+
+.sapUiMedia-Std-Desktop .sapUShellApplicationContainer.sapUShellApplicationContainerLimitedWidth {
+    width: 100%!important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+sapMShellCentralBox {
+    width: 90% !Important;
+    left: 5% !Important;
+    margin-left: 0px !Important;
+}
+
+.sapUiMedia-Std-Desktop .sapUShellApplicationContainer.sapUShellApplicationContainerLimitedWidth {
+    width: 90%!important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sapMShellLogo {
+    display: none !important;
+}
+
+.roundButton .sapMBtnInner {
+    border-radius: 30px;
+}

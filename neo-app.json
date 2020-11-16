@@ -1,32 +1,55 @@
 {
-  "welcomeFile": "/webapp/index.html",
-  "routes": [
-    {
-      "path": "/resources",
-      "target": {
-        "type": "service",
-        "name": "sapui5",
-        "entryPath": "/resources"
-      },
-      "description": "SAPUI5 Resources"
-    },
-    {
-      "path": "/test-resources",
-      "target": {
-        "type": "service",
-        "name": "sapui5",
-        "entryPath": "/test-resources"
-      },
-      "description": "SAPUI5 Test Resources"
-    },
-    {
-      "path": "/xsodata/services.xsodata",
-      "target": {
-        "type": "destination",
-        "name": "Bachelorproef_2018-2019"
-      },
-      "description": "Bachelorproef_2018-2019"
-    }
-  ],
-  "sendWelcomeFileRedirect": true
+	"routes": [{
+		"path": "/webapp/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/resources",
+			"version": "1.71.27"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/webapp/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/test-resources",
+			"version": "1.71.27"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/resources",
+			"version": "1.71.27"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/test-resources",
+			"version": "1.71.27"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/HANA",
+		"target": {
+			"type": "destination",
+			"name": "HANA"
+		},
+		"description": "HANA DH1"
+	}, {
+		"path": "/services/userapi",
+		"target": {
+			"type": "service",
+			"name": "userapi"
+		},
+		"description": "SCP user api"
+	}],
+	"welcomeFile": "/webapp/test/flpSandbox.html",
+	"sendWelcomeFileRedirect": true
 }

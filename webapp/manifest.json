@@ -1,0 +1,150 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.danone.eOrderEntry",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"resources": "resources.json",
+		"dataSources": {
+			"mainService": {
+				"uri": "/HANA/ZCORFI10245/SERVICES/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "sap.ui.ui5-template-plugin.1worklist",
+			"version": "1.71.27"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://task",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.danone.eOrderEntry.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.66.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.f": {},
+				"sap.uxap": {},
+				"sap.ui.layout": {
+					"lazy": true
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.danone.eOrderEntry.i18n.i18n",
+					"bundleLocale": "en",
+					"fallbackLocale": "en",
+					"supportedLocales": [
+						"en"
+					]
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"disableHeadRequestForToken": true
+				}
+			}
+		},
+		"services": {
+			"ShellUIService": {
+				"factoryName": "sap.ushell.ui5service.ShellUIService",
+				"lazy": false,
+				"settings": {
+					"setTitle": "auto"
+				}
+			}
+		},
+		"resources": {
+			"js": [
+				{
+					"uri": "util/Moment.js",
+					"preload": true
+				}
+			],
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.danone.eOrderEntry.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"notFound"
+					]
+				},
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "eOrder",
+					"target": [
+						"eOrder"
+					]
+				}
+			],
+			"targets": {
+				"eOrder": {
+					"viewName": "Main",
+					"viewId": "main",
+					"viewLevel": 1,
+					"title": "{i18n>mainViewTitle}"
+				},
+				"notFound": {
+					"viewName": "NotFound",
+					"viewId": "notFound"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

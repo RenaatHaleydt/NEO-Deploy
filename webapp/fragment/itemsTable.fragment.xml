@@ -1,0 +1,82 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table id="itemsTable" width="auto" noDataText="{i18n>noDataInTable}" busyIndicatorDelay="0" growing="true" growingScrollToLoad="true"
+		mode="MultiSelect" busy="{viewModel>/busy}" updateFinished=".toggleBusy" items="{salesOrderModel>/Items}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="{i18n>itemsTitle}" level="H3"/>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton id="sortItemBtn" type="Transparent" icon="sap-icon://sort" press="onSortItemTable"/>
+				<OverflowToolbarButton type="Transparent" icon="sap-icon://add" press="addNewItem"/>
+				<OverflowToolbarButton type="Transparent" icon="sap-icon://delete" press="deleteItems"/>
+				<SearchField id="searchField" tooltip="{i18n>searchPlaceholder}" search="onSearchItemTable">
+					<layoutData>
+						<OverflowToolbarLayoutData maxWidth="200px" priority="NeverOverflow"/>
+					</layoutData>
+				</SearchField>
+				<Button icon="sap-icon://refresh" text="{i18n>totalsBtn}" press="onRefreshTotalsPress" type="Ghost"/>
+				<Button text="{i18n>itemProposalBtn}" press="onItemProposalPress" type="Ghost"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="{i18n>itemNumberCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>materialNumberCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>materialDescriptionCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>orderQuantityCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>uomCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>itemCategoryCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>amountCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>netValueCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>plantCol}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>reasonForRejectionCol}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Inactive">
+				<cells>
+					<Select selectedKey="{salesOrderModel>ItemNumber}" forceSelection="false">
+						<core:Item key="10" text="10"/>
+						<core:Item key="20" text="20"/>
+						<core:Item key="30" text="30"/>
+					</Select>
+					<Input showSuggestion="true" showValueHelp="true" valueHelpRequest="handleMaterialHelpRequest" value="{salesOrderModel>MatNumber}"
+						change="handleMaterialHelpRequest"/>
+					<Text text="{salesOrderModel>MatDescription}"/>
+					<Input value="{salesOrderModel>Quantity}" type="Number"/>
+					<Select selectedKey="{salesOrderModel>UOM}" forceSelection="false">
+						<core:Item key="PC" text="PC"/>
+						<core:Item key="CS" text="CS"/>
+					</Select>
+					<Select selectedKey="{salesOrderModel>Category}" forceSelection="false">
+						<core:Item key="Editable" text="Editable"/>
+					</Select>
+					<Input value="{salesOrderModel>Amount}" type="Number"/>
+					<Text text="{salesOrderModel>NetValue}"/>
+					<Select selectedKey="{salesOrderModel>Plant}" forceSelection="false">
+						<core:Item key="MD" text="Material Plant"/>
+						<core:Item key="CD" text="Customer Plant"/>
+					</Select>
+					<Button icon="sap-icon://comment" press="onOpenDialogCommentPress"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

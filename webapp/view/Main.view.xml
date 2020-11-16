@@ -1,0 +1,51 @@
+<mvc:View controllerName="com.danone.eOrderEntry.controller.Main" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap" xmlns:f="sap.ui.layout.form">
+	<uxap:ObjectPageLayout>
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader objectTitle="{i18n>mainTitle}" objectSubtitle="{i18n>mainSubTitle}" objectImageURI="{viewModel>/iconURI}"
+				objectImageShape="Circle" isObjectIconAlwaysVisible="true" showPlaceholder="true">
+				<uxap:actions>
+					<uxap:ObjectPageHeaderActionButton press="onSaveSalesOrder" type="Emphasized" text="{i18n>saveButton}" hideText="false" hideIcon="true"/>
+					<uxap:ObjectPageHeaderActionButton press="onCancelSalesOrder" text="{i18n>cancelButton}" hideText="false" hideIcon="true"/>
+				</uxap:actions>
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<core:Fragment fragmentName="com.danone.eOrderEntry.fragment.headerContent" type="XML"/>
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection title="{i18n>headerDataTitle}">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="">
+						<uxap:blocks>
+							<IconTabBar class="sapUiNoContentPadding" applyContentPadding="false" expanded="true">
+								<items>
+									<IconTabFilter icon="sap-icon://customer">
+										<core:Fragment fragmentName="com.danone.eOrderEntry.fragment.salesTab" type="XML"/>
+									</IconTabFilter>
+									<IconTabSeparator icon="sap-icon://feeder-arrow"/>
+									<IconTabFilter icon="sap-icon://shipping-status">
+										<core:Fragment fragmentName="com.danone.eOrderEntry.fragment.additionalData" type="XML"/>
+									</IconTabFilter>
+									<IconTabSeparator icon="sap-icon://feeder-arrow"/>
+									<IconTabFilter icon="sap-icon://activity-items">
+										<core:Fragment fragmentName="com.danone.eOrderEntry.fragment.note" type="XML"/>
+									</IconTabFilter>
+								</items>
+							</IconTabBar>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="false" title="{i18n>itemsTitle}">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="{i18n>itemsTitle}">
+						<uxap:blocks>
+							<core:Fragment fragmentName="com.danone.eOrderEntry.fragment.itemsTable" type="XML"/>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

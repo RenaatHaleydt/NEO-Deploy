@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="viewSettingsDialog" confirm=".onConfirmViewSettingsDialog">
+		<sortItems>
+			<ViewSettingsItem text="{i18n>itemNumberCol}" key="ItemNumber" selected="true"/>
+			<ViewSettingsItem text="{i18n>materialNumberCol}" key="MatNumber"/>
+			<ViewSettingsItem text="{i18n>materialDescriptionCol}" key="MatDescription"/>
+			<ViewSettingsItem text="{i18n>orderQuantityCol}" key="Quantity"/>
+			<ViewSettingsItem text="{i18n>uomCol}" key="UOM"/>
+			<ViewSettingsItem text="{i18n>itemCategoryCol}" key="Category"/>
+			<ViewSettingsItem text="{i18n>amountCol}" key="Amount"/>
+			<ViewSettingsItem text="{i18n>netValueCol}" key="NetValue"/>
+			<ViewSettingsItem text="{i18n>plantCol}" key="Plant"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core">
+	<Dialog id="commentsDialogId" contentWidth="45%" title="{i18n>commentDialogTitle}" showHeader="true" class="sapUiSizeCompact"
+		draggable="true">
+		<content>
+			<TextArea id="commentsId" value="" placeholder="{i18n>commentPlaceholder}" width="90%" class="sapUiSmallMarginBeginEnd"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancelCommentDialogButtonText}" type="Reject" icon="sap-icon://decline" press="onCloseItemCommentDialog"/>
+			<Button text="{i18n>saveCommentDialogButtonText}" type="Accept" icon="sap-icon://save" press="onSaveItemComment"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
